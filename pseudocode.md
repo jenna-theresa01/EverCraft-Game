@@ -24,12 +24,16 @@ This iteration covers core functionality for leveling, combat, and character att
 > As a character I want to have a name so that I can be distinguished from other characters
 
 - can get and set a name
+>> first test passed
+>> now we need to define the name? 
 
 ### Feature: Alignment
 
 > As a character I want to have an alignment so that I have something to guide my actions
 
 - can get and set alignment
+>> first text passed
+>> now we need to define the alignment? 
 - alignments are Good, Evil, and Neutral
 
 ### Feature: Armor Class & Hit Points
@@ -37,7 +41,9 @@ This iteration covers core functionality for leveling, combat, and character att
 > As a combatant I want to have an armor class and hit points so that I can resists attacks from my enemies
 
 - has an Armor Class that defaults to 10
+>> test passed
 - has 5 hit points by default
+>> test passed
 
 ### Feature: Character Can Attack
 
