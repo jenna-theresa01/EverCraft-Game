@@ -1,7 +1,15 @@
 class Char:
-    def __init__(self, name):
-        self.name = name
+    # armor_class = 10
+    # hit_points = 5
+    # name = ""
 
-# char = Char("Venzana")
+
+
+
+
+    def __init__(self, name, align):
+        self.name = name
+        self.align = align
+
         
 
