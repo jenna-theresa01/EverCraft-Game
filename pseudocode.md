@@ -96,3 +96,11 @@ This iteration covers core functionality for leveling, combat, and character att
 
 ## Iteration 2
 
+
+
+## Pseudocode
+
+- start with test case for character name (this will fail)
+- write class that will pass the test
+- repeat
+- move on to the next case
