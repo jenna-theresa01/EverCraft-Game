@@ -19,7 +19,7 @@
 
 This iteration covers core functionality for leveling, combat, and character attributes
 
-### Feature: Create a Character
+### Feature: Create a Character (done)
 
 > As a character I want to have a name so that I can be distinguished from other characters
 
@@ -27,7 +27,7 @@ This iteration covers core functionality for leveling, combat, and character att
 >> first test passed
 >> now we need to define the name? 
 
-### Feature: Alignment
+### Feature: Alignment (done)
 
 > As a character I want to have an alignment so that I have something to guide my actions
 
@@ -36,7 +36,7 @@ This iteration covers core functionality for leveling, combat, and character att
 >> now we need to define the alignment? 
 - alignments are Good, Evil, and Neutral
 
-### Feature: Armor Class & Hit Points
+### Feature: Armor Class & Hit Points (done)
 
 > As a combatant I want to have an armor class and hit points so that I can resists attacks from my enemies
 
@@ -45,7 +45,7 @@ This iteration covers core functionality for leveling, combat, and character att
 - has 5 hit points by default
 >> test passed
 
-### Feature: Character Can Attack
+### Feature: Character Can Attack (done)
 
 > As a combatant I want to be able to attack other combatants so that I can survive to fight another day
 
@@ -53,7 +53,11 @@ This iteration covers core functionality for leveling, combat, and character att
 - roll must meet or beat opponents armor class to hit
 - a natural roll of 20 always hits
 
-### Feature: Character Can Be Damaged
+>> so we need to write a function for the dice roll (not actually rolling the die) 
+>> so this is when the character we've started to create will actually do something? 
+>>> which is why we need a function not just defining the variable
+
+### Feature: Character Can Be Damaged (done)
 
 > As an attacker I want to be able to damage my enemies so that they will die and I will live
 
