@@ -27,12 +27,12 @@ class Char:
         else: 
             Char.attack_status = "miss"
 
-    def xp_gain(self, defender):
-        if Char.attack_status is "hit" or "crit":
-            Char.xp += 10
+    def xp_gain(self):
+        Char.xp += 10
         
     def gain_level(self):
-        if Char.xp % 1000 == 0:
+
+        # if Char.xp % 1000 == 0:
             Char.level += 1
             Char.hit_points += 1
 
