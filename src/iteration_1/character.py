@@ -1,22 +1,23 @@
+from iteration_1.AbilityEnum import *
+from iteration_1.AbilityScores import *
+
+
 class Char:
     armor_class = 10
     hit_points = 5
     name = ""
     xp = 0
-    strength = 10
-    dexterity = 10
-    constitution = 10
-    wisdom = 10
-    intelligence = 10
-    charisma = 10
     level = 1
+    abilities = []
 
     attack_status = ""    
     
-    def __init__(self, name, align):
+    def __init__(self, name, align, abilities):
         self.name = name
         self.align = align
-        
+        self.abilities = abilities
+        self.set_ability_scores()               
+                
     def declare_attack(self, defender, roll):
         if roll >= defender.armor_class:
             self.attack_status = "hit"

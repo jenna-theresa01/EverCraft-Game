@@ -160,3 +160,9 @@ This iteration covers core functionality for leveling, combat, and character att
 - write class that will pass the test
 - repeat
 - move on to the next case
+
+- need ability class
+>> within ability class I want to create the abilities (we have assigned them to an enum that gives them a value)
+- we need a function that will create the ability (the enum does not create the ability it just gives it a value?)
+- we then need to go to the character (Char) class and call the function that creates the ability that we made in the ability scores file
+- 
