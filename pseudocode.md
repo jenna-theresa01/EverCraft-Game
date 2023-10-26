@@ -84,7 +84,7 @@ This iteration covers core functionality for leveling, combat, and character att
 - add dexterity modifier to armor class
 - add constitution modifier to hit points (always at least 1 hit point)
 
-### Feature: A Character Can Gain Experience When Attacking
+### Feature: A Character Can Gain Experience When Attacking (done)
 
 > As a character I want to accumulate experience points (xp) when I attack my enemies so that I can earn bragging rights at the tavern
 

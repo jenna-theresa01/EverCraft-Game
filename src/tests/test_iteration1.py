@@ -33,5 +33,19 @@ def test_get_hurt():
     assert tanner.hit_points == 4
 
 
-def test_ability_score():
+# def test_ability_score():
     
+
+def test_xp_gain():
+    justin = Char("Justin", "Evil")
+    tanner = Char("Tanner", "Good")
+    justin.declare_attack(tanner, 10)
+    justin.xp_gain(justin)
+    assert justin.xp == 10
+
+def test_gain_level():
+    justin = Char("Justin", "Evil")
+    justin.xp = 990
+    justin.xp_gain(justin)
+    justin.gain_level(justin, justin.xp)
+    assert justin.level == 2

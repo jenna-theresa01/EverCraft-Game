@@ -2,13 +2,16 @@ class Char:
     armor_class = 10
     hit_points = 5
     name = ""
+    xp = 0
     strength = 10
     dexterity = 10
     constitution = 10
     wisdom = 10
     intelligence = 10
     charisma = 10
-    
+    level = 1
+
+    attack_status = ""    
     
     def __init__(self, name, align):
         self.name = name
@@ -16,10 +19,22 @@ class Char:
         
     def declare_attack(self, defender, roll):
         if roll >= defender.armor_class:
+            Char.attack_status = "hit"
             defender.hit_points -= 1
         elif roll == 20:
+            Char.attack_status = "crit"
             defender.hit_points -= 2
+        else: 
+            Char.attack_status = "miss"
+
+    def xp_gain(self, defender):
+        if Char.attack_status is "hit" or "crit":
+            Char.xp += 10
         
+    def gain_level(self):
+        if Char.xp % 1000 == 0:
+            Char.level += 1
+            Char.hit_points += 1
 
 class Skill_Mods:
     {
