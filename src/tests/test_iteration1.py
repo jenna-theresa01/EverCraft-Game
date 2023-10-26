@@ -35,7 +35,7 @@ def test_get_hurt():
     assert tanner.hit_points == 4
 
 def test_abilities_exists():
-    justin = Char("Justin", "Evil", "Strength")
+    justin = Char("Justin", "Evil")
     assert justin.abilities is not None
 
 # def test_ability_modifier():

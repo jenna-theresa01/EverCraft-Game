@@ -12,12 +12,16 @@ class Char:
 
     attack_status = ""    
     
-    def __init__(self, name, align, abilities):
+    def __init__(self, name, align):
         self.name = name
         self.align = align
-        self.abilities = abilities
-        self.set_ability_scores()               
-                
+        self.set_ability_scores()
+            
+    def set_ability_scores(self):
+        for i in Abilities:
+            ability_value = Abilities[i]
+            self.abilities.append(ability_value)
+
     def declare_attack(self, defender, roll):
         if roll >= defender.armor_class:
             self.attack_status = "hit"
