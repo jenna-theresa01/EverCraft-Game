@@ -29,3 +29,13 @@ def test_rogue_dexterity():
     justin.assign_and_apply_rogue()
     assert justin.roll == 13
 
+# def test_rogue_alignment():
+    # justin = Char("Justin", "Good", "Rogue")
+    # assert justin.align == "Neutral"
+
+def test_rogue_damage():
+    justin = Char("Justin", "Evil", "Rogue")
+    justin.attack_status = "crit"
+    justin.damage = 5
+    justin.assign_and_apply_rogue()
+    assert justin.damage == 15
