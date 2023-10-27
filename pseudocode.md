@@ -19,27 +19,33 @@
 
 This iteration covers core functionality for leveling, combat, and character attributes
 
-### Feature: Create a Character
+### Feature: Create a Character (done)
 
 > As a character I want to have a name so that I can be distinguished from other characters
 
 - can get and set a name
+>> first test passed
+>> now we need to define the name? 
 
-### Feature: Alignment
+### Feature: Alignment (done)
 
 > As a character I want to have an alignment so that I have something to guide my actions
 
 - can get and set alignment
+>> first text passed
+>> now we need to define the alignment? 
 - alignments are Good, Evil, and Neutral
 
-### Feature: Armor Class & Hit Points
+### Feature: Armor Class & Hit Points (done)
 
 > As a combatant I want to have an armor class and hit points so that I can resists attacks from my enemies
 
 - has an Armor Class that defaults to 10
+>> test passed
 - has 5 hit points by default
+>> test passed
 
-### Feature: Character Can Attack
+### Feature: Character Can Attack (done)
 
 > As a combatant I want to be able to attack other combatants so that I can survive to fight another day
 
@@ -47,7 +53,11 @@ This iteration covers core functionality for leveling, combat, and character att
 - roll must meet or beat opponents armor class to hit
 - a natural roll of 20 always hits
 
-### Feature: Character Can Be Damaged
+>> so we need to write a function for the dice roll (not actually rolling the die) 
+>> so this is when the character we've started to create will actually do something? 
+>>> which is why we need a function not just defining the variable
+
+### Feature: Character Can Be Damaged (done)
 
 > As an attacker I want to be able to damage my enemies so that they will die and I will live
 
@@ -74,13 +84,13 @@ This iteration covers core functionality for leveling, combat, and character att
 - add dexterity modifier to armor class
 - add constitution modifier to hit points (always at least 1 hit point)
 
-### Feature: A Character Can Gain Experience When Attacking
+### Feature: A Character Can Gain Experience When Attacking (done)
 
 > As a character I want to accumulate experience points (xp) when I attack my enemies so that I can earn bragging rights at the tavern
 
 - when a successful attack occurs, the character gains 10 experience points
 
-### Feature: A Character Can Level
+### Feature: A Character Can Level (done)
 
 > As a character I want my experience points to increase my level and combat capabilities so that I can bring vengeance to my foes
 
@@ -96,3 +106,63 @@ This iteration covers core functionality for leveling, combat, and character att
 
 ## Iteration 2
 
+- Characters that a character can have
+
+### Feature: Characters have classes
+
+> As a player I want a character to have a class that customize its capabilities so that I can play more interesting characters
+
+##### Ideas
+
+- changes in hit points
+- changes in attack and damage
+- increases critical range or damage
+- bonuses/penalties versus other classes
+- special abilities
+- alignment limitations
+
+##### Samples
+
+> As a player I want to play a Fighter so that I can kick ass and take names
+
+- attacks roll is increased by 1 for every level instead of every other level
+- has 10 hit points per level instead of 5
+
+> As a player I want to play a Rogue so that I can defeat my enemies with finesse
+
+- does triple damage on critical hits
+- ignores an opponents Dexterity modifier (if positive) to Armor Class when attacking
+- adds Dexterity modifier to attacks instead of Strength
+- cannot have Good alignment
+
+> As a player I want to play a Monk so that I can enjoy being an Asian martial-arts archetype in a medieval European setting
+
+- has 6 hit point per level instead of 5 
+- does 3 points of damage instead of 1 when successfully attacking
+- adds Wisdom modifier (if positive) to Armor Class in addition to Dexterity
+- attack roll is increased by 1 every 2nd and 3rd level
+
+> As a player I want to play a Paladin so that I can smite evil, write wrongs, and be a self-righteous jerk
+
+- has 8 hit points per level instead of 5
+- +2 to attack and damage when attacking Evil characters
+- does triple damage when critting on an Evil character (i.e. add the +2 bonus for a regular attack, and then triple that)
+- attacks roll is increased by 1 for every level instead of every other level
+- can only have good alignment
+
+
+
+
+
+## Pseudocode
+
+- start with test case for character name (this will fail)
+- write class that will pass the test
+- repeat
+- move on to the next case
+
+- need ability class
+>> within ability class I want to create the abilities (we have assigned them to an enum that gives them a value)
+- we need a function that will create the ability (the enum does not create the ability it just gives it a value?)
+- we then need to go to the character (Char) class and call the function that creates the ability that we made in the ability scores file
+- 
