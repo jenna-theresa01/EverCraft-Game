@@ -5,33 +5,48 @@ from iteration_1.AbilityScores import *
 class Char():
     armor_class = 10
     hit_points = 5
-    name = ""
     xp = 0
     level = 1
     abilities = {
         "Strength" : 10,
         "Dexterity" : 10,
-        "Constitution" : 15,
+        "Constitution" : 10,
         "Wisdom" : 10,
         "Intelligence" : 10,
         "Charisma" : 10,
     }
-    roll = int()
-    attack_status = ""    
-    
-    # def set_ability_scores(self):
-    #     for ability in Abilities:
-    #         ability_value = AbilityScore[ability]
-    #         self.abilities.append(ability_value)
+    roll = int()  
 
-    def __init__(self, name, align):
+    def __init__(self, name, align, customize):
         self.name = name
         self.align = align
+        self.customize = customize
+
+    def assign_and_apply_fighter(self):
+        if self.customize is "Fighter":
+            roll_mod = (1 * self.level)
+            self.roll += roll_mod
+            hitpoints_mod = (10 * self.level)
+            self.hit_points = hitpoints_mod
+            return self.roll, self.hit_points
             
-    # def set_ability_scores(self):
-    #     for i in Abilities:
-    #         ability_value = Abilities[i]
-    #         self.abilities.append(ability_value)
+    def assign_and_apply_monk(self):
+        if self.customize is "Monk":
+            hitpoints_mod = (6 * self.level)
+            self.hit_points = hitpoints_mod
+            wisdom_value = self.abilities["Wisdom"]
+            mod_value = Modifiers.mods[f"Value_{wisdom_value}"]
+            if mod_value >= 0:
+                self.armor_class += mod_value
+            return self.hit_points, self.armor_class
+
+    def assign_and_apply_rogue(self):
+        if self.customize is "Rogue":
+            dexterity_value = self.abilities["Dexterity"]
+            mod_value = Modifiers.mods[f"Value_{dexterity_value}"]
+            self.roll += mod_value
+            
+            return self.roll 
 
     def apply_strength_mod(self, roll):
         strength_value = self.abilities["Strength"]

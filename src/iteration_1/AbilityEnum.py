@@ -1,5 +1,3 @@
-# from enum import Enum
-
 class Modifiers():
         mods = {
         "Value_1": -5,
