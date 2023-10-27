@@ -1,4 +1,5 @@
 import pytest
+from rich import print, inspect
 from iteration_1.character import *
 from iteration_1.AbilityEnum import *
 from iteration_1.AbilityScores import *
@@ -34,9 +35,41 @@ def test_get_hurt():
     justin.declare_attack(tanner, 18)
     assert tanner.hit_points == 4
 
-def test_abilities_exists():
+def test_attributes_exists():
     justin = Char("Justin", "Evil")
-    assert justin.abilities is not None
+    assert justin.attributes is not None
+
+def test_attributes_has_default_value():
+    justin = Char("Justin", "Evil")
+    assert justin.attributes[Attribute.STRENGTH] == 10
+    assert justin.attributes[Attribute.DEXTERITY] == 10
+    assert justin.attributes[Attribute.CONSTITUTION] == 10
+    assert justin.attributes[Attribute.INTELLIGENCE] == 10
+    assert justin.attributes[Attribute.WISDOM] == 10
+    assert justin.attributes[Attribute.CHARISMA] == 10
+
+def test_attributes_has_default_value_inverse():
+    justin = Char("Justin", "Evil")
+    with pytest.raises(Exception):
+        assert justin.attributes[Attribute.STRENGTH] == 18
+
+def test_set_attribute():
+    justin = Char("Justin", "Evil")
+    assert justin.attributes[Attribute.STRENGTH] == 10
+    justin.set_attribute(Attribute.STRENGTH, 18)
+    assert justin.attributes[Attribute.STRENGTH] == 18
+    justin.set_attribute(Attribute.DEXTERITY, 15)
+    assert justin.attributes[Attribute.DEXTERITY] == 15
+
+
+# def test_attribute_str_has_default_value():
+#     justin = Char("Justin", "Evil")
+
+#     inspect(justin)
+
+#     assert justin.attributes.STRENGTH == 10
+#     assert justin.attributes.STRENGTH is not None
+
 
 # def test_ability_modifier():
 #     assert Skill_Mods ; 1 == -5
