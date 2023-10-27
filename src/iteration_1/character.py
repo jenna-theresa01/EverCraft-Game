@@ -45,8 +45,9 @@ class Char():
             dexterity_value = self.abilities["Dexterity"]
             mod_value = Modifiers.mods[f"Value_{dexterity_value}"]
             self.roll += mod_value
-            
-            return self.roll 
+            if self.attack_status == "crit":
+                self.damage *= 3
+            return self.roll, self.damage
 
     def apply_strength_mod(self, roll):
         strength_value = self.abilities["Strength"]
