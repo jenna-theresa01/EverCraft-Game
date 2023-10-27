@@ -165,4 +165,13 @@ This iteration covers core functionality for leveling, combat, and character att
 >> within ability class I want to create the abilities (we have assigned them to an enum that gives them a value)
 - we need a function that will create the ability (the enum does not create the ability it just gives it a value?)
 - we then need to go to the character (Char) class and call the function that creates the ability that we made in the ability scores file
-- 
+
+
+#### Maybe after code freeze:
+
+- need to set alignment
+    - we want to make it an enum 
+    - an enum will set the good, evil, neutral to a unique value that we should be able to access and be able to set a particular alignment for the character class
+- this will make it so we can specifically set the rogue class as not good
+- after the enum is defined and set should we create a function? or is this something that we can just define?
+- there should be a function, however, to be able to set the rogue class not equal to good alignment
