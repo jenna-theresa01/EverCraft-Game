@@ -3,6 +3,10 @@ from iteration_1.character import *
 from iteration_1.AbilityEnum import *
 from iteration_1.AbilityScores import *
 
+def test_can_we_do_it():
+    mod_values = Modifiers.mods["Value_1"]
+    assert mod_values == -5
+
 def test_char_name():
     character = Char("Justin", "Evil")
     assert character.name is not None
@@ -38,8 +42,21 @@ def test_abilities_exists():
     justin = Char("Justin", "Evil")
     assert justin.abilities is not None
 
-# def test_ability_modifier():
-#     assert Skill_Mods ; 1 == -5
+def test_strength_mod():
+    justin = Char("Justin", "Evil")
+    justin.roll = 12
+    justin.apply_strength_mod(12)
+    assert justin.roll == 12
+
+def test_dexterity_mod():
+    justin = Char("Justin", "Evil")
+    justin.apply_dexterity_mod()
+    assert justin.armor_class == 10
+
+def test_constitution_mod():
+    justin = Char("Justin", "Evil")
+    justin.apply_constitution_mod()
+    assert justin.hit_points == 7
 
 
 def test_xp_gain():
